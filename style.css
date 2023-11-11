@@ -1,0 +1,167 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Roboto;
+}
+h1,h2,h3{
+    font-size: 18px;
+}
+body{
+    display: grid;
+    grid-template-columns: repeat(12,minmax(100px,1fr));
+    grid-template-rows: 100px auto;
+    grid-template-areas: "a a h h h h h h h h h h"
+                         "a a m m m m m m m m m m"
+                         ;
+}
+body>main{
+    grid-area: m;
+    background-color: #f1f1f1;
+    display: grid;
+    padding: 10px 20px 40px 20px;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: 1fr 18em;
+    grid-template-areas: "p p a"
+                         "p p t";
+   gap: 10px;
+}
+main #project{
+    grid-area: p;
+    display: grid;
+    grid-template:  20px auto/auto;
+    
+}
+main .projectWrapper{
+    display:grid;
+    grid-template: repeat(3,1fr)/repeat(2,1fr);
+    margin-top: 10px;
+    gap: 10px;
+}
+.projectWrapper>div{
+    background-color: white;
+    display:grid;
+    border-left: 4px solid gold;
+    padding:3px 3px 3px 4px;
+}
+.projectWrapper p{
+    color: rgb(132, 112, 112);
+}
+.icon{
+    flex-grow: 1;
+    align-self: end;
+    justify-self: end;
+}
+.icon>*{
+    margin-left: 20px;
+}
+main #announcement{
+    grid-area: a;
+    width: 350px;
+}
+main #announcement>div#wrapper{
+    background-color: white;
+    padding: 20px;
+    margin-top: 9px;
+}
+main #announcement>#wrapper>div{
+    padding-bottom: 20px;
+}
+main #siteMaintenance~div{
+    border-top: 2px solid lightgrey;
+    margin-top: 15px;
+}
+#wrapper p{
+    color: rgb(132, 112, 112);
+}
+main #trending{
+    grid-area: t;
+}
+body>aside{
+    grid-area: a;
+    background-color: rgb(73, 73, 209);
+    color: white;
+    padding: 10px; 
+}
+aside>header>img{
+    margin-right: 10px;
+}
+aside span{
+    position: relative;
+    top: -10px;   
+}
+aside>header>span{
+    top: -20px; 
+}
+aside img{
+    margin-right: 30px;
+}
+aside>*{
+    margin-bottom: 50px;
+}
+body>header{
+    padding: 4px 0 7px 20px;
+    grid-area: h;
+    display: grid;
+    grid-template-columns: repeat(10,1fr);
+    grid-template-rows: repeat(2,20px);
+    align-content: space-between;
+    row-gap: 10px;
+    column-gap: 20px;
+}
+img#search{
+    grid-column: 1;
+    margin-right: 2px;
+}
+input#search-input{
+    grid-column: 2/7;
+}
+#header-left{
+    grid-column: 8/-1;
+    display: flex;
+    justify-content: space-around;
+    gap: px;
+}
+img#herobg{
+    grid-row: 2;
+    grid-column:1;
+    position: relative;
+    top: -25px;
+}
+body>header>p{
+    grid-row: 2;
+    grid-column: 2/5;
+    position: relative;
+    top: -15px;
+}
+button#new{
+   grid-row: 2;
+   grid-column: 8;
+}
+button#upload{
+    grid-row: 2;
+   grid-column:9;
+}
+button#share{
+    grid-row: 2;
+    grid-column: 10;
+}
+input{
+    border-radius: 9px;
+    border: none;
+    padding: 4px;
+    background-color: #ded1d1;
+}
+input:focus{
+    outline: none;
+}
+button{
+    background-color: rgb(107, 107, 209);
+    border: none;
+    border-radius: 10px;
+    width: 80px;
+}
+button a{
+    color: white;
+    text-decoration: none;
+}
